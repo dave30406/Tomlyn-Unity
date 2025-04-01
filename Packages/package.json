@@ -1,0 +1,11 @@
+{
+    "name": "com.dave30406.tomlyn_unity",
+    "version": "1.0.0",
+    "displayName": "Tomlyn for Unity",
+    "description": "TOML parsing library for Unity based on Tomlyn.",
+    "unity": "2019.1",
+    "author": {
+        "name": "Dave Lin",
+        "url": "https://github.com/dave30406"
+    }
+}
