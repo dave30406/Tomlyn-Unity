@@ -7,6 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Reflection;
 using Tomlyn.Model;
+using Tomlyn.Model.Accessors;
 using Tomlyn.Parsing;
 using Tomlyn.Syntax;
 using Tomlyn.Text;

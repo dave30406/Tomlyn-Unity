@@ -5,45 +5,46 @@
 using System;
 using System.Text;
 
-namespace Tomlyn.Helpers;
-
-/// <summary>
-/// Naming helpers used by Tomlyn.
-/// </summary>
-public class TomlNamingHelper
+namespace Tomlyn.Helpers
 {
-    [ThreadStatic]
-    private static StringBuilder? _builder;
-
     /// <summary>
-    /// Converts a string from pascal case (e.g `ThisIsFine`) to snake case (e.g `this_is_fine`).
+    /// Naming helpers used by Tomlyn.
     /// </summary>
-    /// <param name="name">A PascalCase string to convert to snake case.</param>
-    /// <returns>The snake case version of the input string.</returns>
-    public static string PascalToSnakeCase(string name)
+    public class TomlNamingHelper
     {
-        var builder = Builder;
-        try
+        [ThreadStatic]
+        private static StringBuilder? _builder;
+
+        /// <summary>
+        /// Converts a string from pascal case (e.g `ThisIsFine`) to snake case (e.g `this_is_fine`).
+        /// </summary>
+        /// <param name="name">A PascalCase string to convert to snake case.</param>
+        /// <returns>The snake case version of the input string.</returns>
+        public static string PascalToSnakeCase(string name)
         {
-            var pc = (char)0;
-            foreach (var c in name)
+            var builder = Builder;
+            try
             {
-                if (char.IsUpper(c) && !char.IsUpper(pc) && pc != 0 && pc != '_')
+                var pc = (char)0;
+                foreach (var c in name)
                 {
-                    builder.Append('_');
+                    if (char.IsUpper(c) && !char.IsUpper(pc) && pc != 0 && pc != '_')
+                    {
+                        builder.Append('_');
+                    }
+
+                    builder.Append(char.ToLowerInvariant(c));
+                    pc = c;
                 }
 
-                builder.Append(char.ToLowerInvariant(c));
-                pc = c;
+                return builder.ToString();
             }
+            finally
+            {
+                builder.Length = 0;
+            }
+        }
 
-            return builder.ToString();
-        }
-        finally
-        {
-            builder.Length = 0;
-        }
+        private static StringBuilder Builder => _builder ??= new StringBuilder();
     }
-
-    private static StringBuilder Builder => _builder ??= new StringBuilder();
 }

@@ -1,12 +1,13 @@
-namespace Tomlyn.Model.Accessors;
-
-internal enum ReflectionObjectKind
+namespace Tomlyn.Model.Accessors
 {
-    Primitive,
-    NullablePrimitive,
-    Struct,
-    NullableStruct,
-    Collection,
-    Dictionary,
-    Object
+    internal enum ReflectionObjectKind
+    {
+        Primitive,
+        NullablePrimitive,
+        Struct,
+        NullableStruct,
+        Collection,
+        Dictionary,
+        Object
+    }
 }

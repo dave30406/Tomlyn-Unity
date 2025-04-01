@@ -4,9 +4,10 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-
-namespace Tomlyn;
 using System;
+
+namespace Tomlyn
+{
 
 /// <summary>
 /// A datetime value that can represent a TOML
@@ -18,8 +19,19 @@ using System;
 /// <param name="DateTime">The datetime offset.</param>
 /// <param name="SecondPrecision">The precision of milliseconds.</param>
 /// <param name="Kind">The kind of datetime offset.</param>
-public record struct TomlDateTime(DateTimeOffset DateTime, int SecondPrecision, TomlDateTimeKind Kind) : IConvertible
+public struct TomlDateTime : IConvertible
 {
+    public DateTimeOffset DateTime { get; }
+    public int SecondPrecision { get; }
+    public TomlDateTimeKind Kind { get; }
+
+    public TomlDateTime(DateTimeOffset dateTime, int secondPrecision, TomlDateTimeKind kind)
+    {
+        DateTime = dateTime;
+        SecondPrecision = secondPrecision;
+        Kind = kind;
+    }
+
     public TomlDateTime(int year, int month, int day) : this(new DateTimeOffset(new DateTime(year, month, day)), 0, TomlDateTimeKind.LocalDate)
     {
     }
@@ -207,4 +219,5 @@ public record struct TomlDateTime(DateTimeOffset DateTime, int SecondPrecision, 
     {
         return new TomlDateTime(dateTime, 0, TomlDateTimeKind.LocalDateTime);
     }
+}
 }

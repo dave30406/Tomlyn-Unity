@@ -1,13 +1,14 @@
 using System;
 
-namespace Tomlyn.Model.Accessors;
-
-internal sealed class PrimitiveDynamicAccessor : DynamicAccessor
+namespace Tomlyn.Model.Accessors
 {
-    public PrimitiveDynamicAccessor(DynamicModelReadContext context, Type targetType, bool isNullable) : base(context, targetType, ReflectionObjectKind.Primitive)
+    internal sealed class PrimitiveDynamicAccessor : DynamicAccessor
     {
-        IsNullable = isNullable;
-    }
+        public PrimitiveDynamicAccessor(DynamicModelReadContext context, Type targetType, bool isNullable) : base(context, targetType, ReflectionObjectKind.Primitive)
+        {
+            IsNullable = isNullable;
+        }
 
-    public bool IsNullable { get; set; }
+        public bool IsNullable { get; set; }
+    }
 }

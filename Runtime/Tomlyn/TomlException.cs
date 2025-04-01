@@ -2,14 +2,15 @@ using System;
 using System.Text;
 using Tomlyn.Syntax;
 
-namespace Tomlyn;
-
-public class TomlException : Exception
+namespace Tomlyn
 {
-    public TomlException(DiagnosticsBag diagnostics) : base(diagnostics.ToString())
+    public class TomlException : Exception
     {
-        Diagnostics = diagnostics;
-    }
+        public TomlException(DiagnosticsBag diagnostics) : base(diagnostics.ToString())
+        {
+            Diagnostics = diagnostics;
+        }
 
-    public DiagnosticsBag Diagnostics { get; }
+        public DiagnosticsBag Diagnostics { get; }
+    }
 }
