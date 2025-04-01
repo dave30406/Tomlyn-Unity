@@ -28,5 +28,6 @@ Tomlyn Version: 0.19.0
 Release at: 2025/3
 
 ## 📄 License
-This Unity adaptation is under the same license as the original Tomlyn project (MIT).
+This Unity adaptation is under the same license as the original Tomlyn project (BSD-Clause 2 license).
+
 Original author: Alexandre Mutel ([xoofx](https://github.com/xoofx))
