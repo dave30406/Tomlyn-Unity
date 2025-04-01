@@ -15,9 +15,12 @@ This package enables Unity developers to read and write `.toml` configuration fi
 
 #### Using Unity Package Manager (UPM) via Git
 
-Open the Package Manager window,.
+Open the Package Manager window,
+
 Click `+` Package Manager’s toolbar.
+
 Select Install package from git URL from the install menu.
+
 Enter: https://github.com/dave30406/Tomlyn-Unity.git
 
 ## 📄 Version
