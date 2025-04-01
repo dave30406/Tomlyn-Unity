@@ -17,14 +17,15 @@ This package enables Unity developers to read and write `.toml` configuration fi
 
 Open the Package Manager window,
 
-Click `+` Package Manager’s toolbar.
+Click `+` on Package Manager’s toolbar.
 
-Select Install package from git URL from the install menu.
+Select Install package from git URL from the menu.
 
-Enter: https://github.com/dave30406/Tomlyn-Unity.git
+Enter: `https://github.com/dave30406/Tomlyn-Unity.git` and install.
 
 ## 📄 Version
 Tomlyn Version: 0.19.0
+
 Release at: 2025/3
 
 ## 📄 License
